@@ -20,15 +20,15 @@ $(document).ready(function () {
     let hard = $("#hard");
 
     function getChallenge(){
-            if(easy.prop("checked") === true){
+            if(easy.prop("clicked") === true){
                 challengeIndex = Math.floor(Math.random() * easyArr.length)
                 challengeID = easyArr[challengeIndex];
                 
-            } else if(medium.prop("checked") === true){
+            } else if(medium.prop("clicked") === true){
                 challengeIndex = Math.floor(Math.random() * mediumArr.length)
                 challengeID = mediumArr[challengeIndex];
                 
-            } else if(hard.prop("checked") === true){
+            } else if(hard.prop("clicked") === true){
                 challengeIndex = Math.floor(Math.random() * hardArr.length)
                 challengeID = hardArr[challengeIndex];
                 
