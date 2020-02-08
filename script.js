@@ -33,25 +33,27 @@ $(document).ready(function () {
                 challengeID = hardArr[challengeIndex];
                 
             }
+            $.ajax({
+                url: "https://www.codewars.com/api/v1/code-challenges/" + challengeID,
+                headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
+                method: "GET"
+            }).then(function (data) {
+                q.text(data.description)
+                console.log(data)
+            })
         }
 
 
-    let q = $("#question");
-    let getQ = $("#generate");
-
-    getQ.on("click", function () {
-
+    let q = $("questionText");
+    
+    easy.click(function (){
         getChallenge();
-
-        $.ajax({
-            url: "https://www.codewars.com/api/v1/code-challenges/" + challengeID,
-            headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
-            method: "GET"
-        }).then(function (data) {
-            q.text(data.description)
-            console.log(data)
-        })
-
-    });
+    })
+    medium.click(function (){
+        getChallenge();
+    })
+    hard.click(function (){
+        getChallenge();
+    })
 
 });

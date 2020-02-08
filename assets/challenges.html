@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>code.me - Challenge</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 </head>
 
 <body>
@@ -38,19 +39,19 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-6 is-offset-3">
-                    <h3 class="subtitle">
+                    <h3 class="subtitle" id=questionText>
                         Please select a level of difficulty for the daily challenge </h3>
        
             <div class="container">
                 <div class="column is-8 is-offset-2">
                     <div class="buttons">
-                        <button class="button is-rounded is-primary is-medium" id="easy">
+                        <button class="button is-rounded is-primary is-medium" id="difficulty" id="easy">
                             Easy
                         </button>
-                        <button class="button is-rounded is-warning is-medium" id=medium>
+                        <button class="button is-rounded is-warning is-medium" id="difficulty" id=medium>
                             Medium
                         </button>
-                        <button class="button is-rounded is-danger is-medium" id="hard">
+                        <button class="button is-rounded is-danger is-medium" id="difficulty" id="hard">
                             Hard
                         </button>
                     </div>
@@ -66,7 +67,7 @@
 
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>
