@@ -68,9 +68,11 @@ $(document).ready(function () {
     }).then(function (data) {
         console.log(data);
         console.log(data.items[1].id.videoId);
-        var videoUrl="https://www.youtube.com/embed/"+ data.items[1].id.videoId;
-        console.log(videoUrl);
-        $(".videos").append('<li><iframe width="200" height="150" src='+videoUrl+'frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+        for ( var videoNum=0; videoNum<5; videoNum++){
+            var videoUrl="https://www.youtube.com/embed/"+ data.items[videoNum].id.videoId;
+            console.log(videoUrl);
+            $(".videos").append('<li><iframe width="200" height="150" src='+videoUrl+' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+        }
     })
 
 });
