@@ -71,4 +71,10 @@ $(document).ready(function () {
     //Saving individual's name from index.html
     let save = $("#saveName");
     let user = $("#userName");
+    let loadName = $("#name");
+
+    loadName.text(localStorage.getItem("Name"));
+    save.on("click", function (){
+        localStorage.setItem("Name", user.val());
+    })
 });
