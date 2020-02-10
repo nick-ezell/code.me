@@ -73,8 +73,25 @@ $(document).ready(function () {
     let user = $("#userName");
     let loadName = $("#name");
 
+
     loadName.text(localStorage.getItem("Name"));
     save.on("click", function (){
         localStorage.setItem("Name", user.val());
     })
+
+    //Youtube API search call - Mathew 
+    var searchQuery="software";
+    $.ajax({
+        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+searchQuery+"&key=AIzaSyDXtUj8urMLq0xLC4obpF9I1L1NNkx2H-I",
+        method: "GET"
+    }).then(function (data) {
+        console.log(data);
+        console.log(data.items[1].id.videoId);
+        for ( var videoNum=0; videoNum<5; videoNum++){
+            var videoUrl="https://www.youtube.com/embed/"+ data.items[videoNum].id.videoId;
+            console.log(videoUrl);
+            $(".videos").append('<li><iframe width="200" height="150" src='+videoUrl+' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+        }
+    })
+
 });

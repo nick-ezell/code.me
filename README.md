@@ -13,7 +13,7 @@ This project is currently in the development stage.
 
 
 ## Authors
-[Mathew Thomas](https://github.com/...)
+[Mathew Thomas](https://github.com/IILMTII)
 [Nick Ezell](https://github.com/nick-ezell)
 [Kristin Evans](https://github.com/kevans0625)
 
