@@ -72,6 +72,8 @@ $(document).ready(function () {
     let save = $("#saveName");
     let user = $("#userName");
     let loadName = $("#name");
+
+
     loadName.text(localStorage.getItem("Name"));
     save.on("click", function (){
         localStorage.setItem("Name", user.val());
