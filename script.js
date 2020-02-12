@@ -19,7 +19,14 @@ $(document).ready(function () {
     //Elements for writing questions
     let q = $("#question");
     let qDiv = $("<div>");
+    qDiv.attr("id", "qDiv");
+    qDiv.attr("class", "box");
     let qText = $("<p>");
+    let favIcon = $("<img>").attr("src", "images/favicon.png");
+    favIcon.attr("class", "favIcon");
+    //Variable for YT API call
+    let youtubeBtn = $("<button>").attr("class", "button is-rounded is-medium");
+    youtubeBtn.text("YouTube References")
     //Click listeners for each difficulty
     easy.on("click", function () {
         challengeIndex = Math.floor(Math.random() * easyArr.length)
@@ -29,8 +36,11 @@ $(document).ready(function () {
             headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
             method: "GET"
         }).then(function (data) {
+            $(".buttons").empty();
+            $("#youtubeBtn").append(youtubeBtn)
             q.empty();
             q.append(qDiv);
+            qDiv.append(favIcon);
             qDiv.append(qText);
             qText.text(data.description)
             console.log(data)
@@ -45,8 +55,11 @@ $(document).ready(function () {
             headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
             method: "GET"
         }).then(function (data) {
+            $(".buttons").empty();
+            $("#youtubeBtn").append(youtubeBtn)
             q.empty();
             q.append(qDiv);
+            qDiv.append(favIcon);
             qDiv.append(qText);
             qText.text(data.description)
             console.log(data)
@@ -61,8 +74,11 @@ $(document).ready(function () {
             headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
             method: "GET"
         }).then(function (data) {
+            $(".buttons").empty();
+            $("#youtubeBtn").append(youtubeBtn)
             q.empty();
             q.append(qDiv);
+            qDiv.append(favIcon);
             qDiv.append(qText);
             qText.text(data.description)
             console.log(data)
@@ -78,20 +94,21 @@ $(document).ready(function () {
     save.on("click", function (){
         localStorage.setItem("Name", user.val());
     })
-
     //Youtube API search call - Mathew 
-    var searchQuery="software";
-    $.ajax({
-        url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+searchQuery+"&key=AIzaSyDXtUj8urMLq0xLC4obpF9I1L1NNkx2H-I",
-        method: "GET"
-    }).then(function (data) {
-        console.log(data);
-        console.log(data.items[1].id.videoId);
-        for ( var videoNum=0; videoNum<5; videoNum++){
-            var videoUrl="https://www.youtube.com/embed/"+ data.items[videoNum].id.videoId;
-            console.log(videoUrl);
-            $(".videos").append('<li><iframe width="200" height="150" src='+videoUrl+' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
-        }
-    })
-
+    // var searchQuery="software";
+    // let googleKey = "AIzaSyCN8BP_zA7LbOr5ZegORQuuaaKh06r5Fkk";
+    // $.ajax({
+    //     url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+searchQuery+"&key=" + googleKey,
+    //     method: "GET"
+    // }).then(function (data) {
+    //     console.log(data);
+    //     console.log(data.items[1].id.videoId);
+    //     for ( var videoNum=0; videoNum<5; videoNum++){
+    //         var videoUrl="https://www.youtube.com/embed/"+ data.items[videoNum].id.videoId;
+    //         console.log(videoUrl);
+    //         $(".videos").append('<li><iframe width="200" height="150" src='+videoUrl+' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+    //     }
+    // }).catch(function (error){
+    //     console.log(error)
+    // })
 });
