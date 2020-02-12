@@ -29,6 +29,7 @@ $(document).ready(function () {
     //Variable for YT API call
     let youtubeBtn = $("<button>").attr("class", "button is-rounded is-danger is-medium");
     let youtubeIcon = $("<i>").attr("class", "fab fa-youtube")
+    youtubeBtn.attr("id", "ytBtn")
     youtubeBtn.text("YouTube References")
     //Click listeners for each difficulty
     easy.on("click", function () {
@@ -64,7 +65,7 @@ $(document).ready(function () {
                     for (var videoNum = 0; videoNum < 5; videoNum++) {
                         var videoUrl = "https://www.youtube.com/embed/" + data.items[videoNum].id.videoId;
                         console.log(videoUrl);
-                        $(".videos").append('<li><iframe width="200" height="150" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+                        $(".videos").append('<li><iframe width="283.5" height="230" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
                     }
                 }).catch(function (error) {
                     console.log(error)
@@ -160,7 +161,7 @@ $(document).ready(function () {
 
         })
     })
-    
+
     //Saving individual's name from index.html
     let save = $("#saveName");
     let user = $("#userName");
