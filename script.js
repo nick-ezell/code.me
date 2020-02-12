@@ -20,6 +20,8 @@ $(document).ready(function () {
     let q = $("#question");
     let qDiv = $("<div>");
     let qText = $("<p>");
+    let favIcon = $("<img>").attr("src", "./assets/images/favicon.png");
+    favIcon.attr("class", "favImg");
     //Click listeners for each difficulty
     easy.on("click", function () {
         challengeIndex = Math.floor(Math.random() * easyArr.length)
