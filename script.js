@@ -22,11 +22,13 @@ $(document).ready(function () {
     qDiv.attr("id", "qDiv");
     qDiv.attr("class", "box");
     let qText = $("<p>");
-    let favIcon = $("<img>").attr("src", "images/favicon.png");
-    favIcon.attr("class", "favIcon");
+    let favSpan = $("<span>").attr("class", "icon is-small")
+    let favIcon = $("<i>").attr("class", "fas fa-star");
+    favIcon.attr("id", "favIcon");
+    favIcon.attr("aria-hidden", "true");
     //Variable for YT API call
     let youtubeBtn = $("<button>").attr("class", "button is-rounded is-danger is-medium");
-     let youtubeIcon = $("<i>").attr("class","fab fa-youtube" )
+    let youtubeIcon = $("<i>").attr("class", "fab fa-youtube")
     youtubeBtn.text("YouTube References")
     //Click listeners for each difficulty
     easy.on("click", function () {
@@ -42,7 +44,8 @@ $(document).ready(function () {
             youtubeBtn.prepend(youtubeIcon)
             q.empty();
             q.append(qDiv);
-            qDiv.append(favIcon);
+            qDiv.append(favSpan);
+            favSpan.append(favIcon);
             qDiv.append(qText);
             qText.text(props.description)
             console.log(props)
@@ -157,6 +160,7 @@ $(document).ready(function () {
 
         })
     })
+    
     //Saving individual's name from index.html
     let save = $("#saveName");
     let user = $("#userName");
@@ -165,7 +169,11 @@ $(document).ready(function () {
 
     loadName.text(localStorage.getItem("Name"));
     save.on("click", function () {
+        if(user.val() === ""){
+            localStorage.setItem("Name", "friend")
+        } else {
         localStorage.setItem("Name", user.val());
+    }
     })
 
 });
