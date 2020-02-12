@@ -1,11 +1,11 @@
-.favIcon {
-    height: 35px;
-    width: 35px;
-}
-.favIcon {
+#favIcon {
     margin-bottom: .5em;
+    color: #3173dc;
 }
-
+#favIcon:hover {
+    color: #000;
+    cursor: pointer;
+}
 .youtube {
     height:250px;
     width:300px;
@@ -20,4 +20,7 @@
 }
 .fa-youtube {
     margin: 3px
+}
+.footer {
+    padding: 1rem 1rem 1rem;
 }
