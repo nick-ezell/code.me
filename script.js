@@ -25,7 +25,8 @@ $(document).ready(function () {
     let favIcon = $("<img>").attr("src", "images/favicon.png");
     favIcon.attr("class", "favIcon");
     //Variable for YT API call
-    let youtubeBtn = $("<button>").attr("class", "button is-rounded is-medium");
+    let youtubeBtn = $("<button>").attr("class", "button is-rounded is-danger is-medium");
+     let youtubeIcon = $("<i>").attr("class","fab fa-youtube" )
     youtubeBtn.text("YouTube References")
     //Click listeners for each difficulty
     easy.on("click", function () {
@@ -38,6 +39,7 @@ $(document).ready(function () {
         }).then(function (props) {
             $(".buttons").empty();
             $("#youtubeBtn").append(youtubeBtn)
+            youtubeBtn.prepend(youtubeIcon)
             q.empty();
             q.append(qDiv);
             qDiv.append(favIcon);
