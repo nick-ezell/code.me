@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>code.me - Challenge</title>
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
@@ -38,50 +38,54 @@
                 </div>
             </nav>
         </div>
-        
-                    <div class="container column is-12">
-                        <div class="hero-body">
-                            
-                                <div class="column is-6 is-offset-3">
-                                    <h3 class="subtitle" id=question>
-                        Welcome to code.me, <span id="name"></span>! Please select a level of difficulty for the daily challenge </h3>
-       
-            <div class="container" id="youtubeBtn">
-                <div class="column is-9 is-offset-1">
-                    <div class="buttons">
-                        <button class="button is-rounded is-primary is-medium" id="easy">
-                            Easy
-                        </button>
-                        <button class="button is-rounded is-warning is-medium" id=medium>
-                            Medium
-                        </button>
-                        <button class="button is-rounded is-danger is-medium" id="hard">
-                            Hard
-                        </button>
-                                            </div>
-                                        </div>
-    
-                                    </div>
-                                </div>
-                                    <div class="container hide">
-                                    <h3 class="subtitle" id=questionText>Top 5 Related Videos: </h3>
-                                  
+        <div class="hero-body">
+            <div class="container column is-12">
+                <div class="column is-6 is-offset-3">
+                    <h3 class="subtitle" id=question>
+                        Welcome to code.me, <span id="name"></span>! Please select a level of difficulty for the daily
+                        challenge </h3>
 
-                                        <div class="youtube hide">
-                                        <ul class="videos">
-                                            <li><iframe width="200" height="150" src="https://www.youtube.com/embed/at_Pv_b33wg"
-                                                    frameborder="0"
-                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowfullscreen></iframe>
-                                            </li>
-                                  
-                                    </div>
-                            </div>
+                    <div class="container" id="youtubeBtn">
+                            <div class="columns is-mobile is-centered">
+                                
+                        <div class="column is-9 is-offset-1">
+                            <div class="buttons">
+                                <button class="button is-rounded is-primary is-medium" id="easy">
+                                    Easy
+                                </button>
+                                <button class="button is-rounded is-warning is-medium" id=medium>
+                                    Medium
+                                </button>
+                                <button class="button is-rounded is-danger is-medium" id="hard">
+                                    Hard
+                                </button>
                             </div>
                         </div>
                     </div>
-            </div>   
-        </div>   
+                </div>
+                
+                
+                <div class="container hide">
+                    <div class="columns is-mobile is-centered">
+                        <div class="column is-half">
+                            <h3 class="subtitle has-text-centered" id=questionText>Top 5 Related Videos:</h3>
+                            <div class="youtube hide">
+                                <ul class="videos">
+                                    <li><iframe width="300" height="250" src="https://www.youtube.com/embed/at_Pv_b33wg"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                    </li>
+                                </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
 
