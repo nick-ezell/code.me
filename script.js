@@ -162,6 +162,19 @@ $(document).ready(function () {
         })
     })
 
+    //toggle f(x) for navbar 
+    function toggle() {
+        var burger = document.querySelector('.burger');
+        var nav = document.querySelector('#'+burger.dataset.target);
+       
+        burger.addEventListener('click', function(){
+          burger.classList.toggle('is-active');
+          nav.classList.toggle('is-active');
+        });
+
+      } 
+      toggle();
+
     //Saving individual's name from index.html
     let save = $("#saveName");
     let user = $("#userName");
