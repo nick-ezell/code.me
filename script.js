@@ -35,53 +35,122 @@ $(document).ready(function () {
             url: "https://www.codewars.com/api/v1/code-challenges/" + challengeID,
             headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
             method: "GET"
-        }).then(function (data) {
+        }).then(function (props) {
             $(".buttons").empty();
             $("#youtubeBtn").append(youtubeBtn)
             q.empty();
             q.append(qDiv);
             qDiv.append(favIcon);
             qDiv.append(qText);
-            qText.text(data.description)
-            console.log(data)
+            qText.text(props.description)
+            console.log(props)
+
+            // Youtube API search call - Mathew 
+            youtubeBtn.on("click", function () {
+                $(".hide").css("visibility", "visible")
+                var searchQuery = challengeID + "JavaScript";
+                let googleKey = "AIzaSyCN8BP_zA7LbOr5ZegORQuuaaKh06r5Fkk";
+                $.ajax({
+                    url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + searchQuery + "&key=" + googleKey,
+                    method: "GET"
+                }).then(function (data) {
+                    console.log(data);
+                    console.log(data.items[1].id.videoId);
+                    for (var videoNum = 0; videoNum < 5; videoNum++) {
+                        var videoUrl = "https://www.youtube.com/embed/" + data.items[videoNum].id.videoId;
+                        console.log(videoUrl);
+                        $(".videos").append('<li><iframe width="200" height="150" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+
+            })
+
         })
     })
 
-    medium.on("click", function (){
+    medium.on("click", function () {
         challengeIndex = Math.floor(Math.random() * mediumArr.length)
         challengeID = mediumArr[challengeIndex];
         $.ajax({
             url: "https://www.codewars.com/api/v1/code-challenges/" + challengeID,
             headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
             method: "GET"
-        }).then(function (data) {
+        }).then(function (props) {
             $(".buttons").empty();
             $("#youtubeBtn").append(youtubeBtn)
             q.empty();
             q.append(qDiv);
             qDiv.append(favIcon);
             qDiv.append(qText);
-            qText.text(data.description)
-            console.log(data)
+            qText.text(props.description)
+            console.log(props)
+
+            // Youtube API search call - Mathew 
+            youtubeBtn.on("click", function () {
+                $(".hide").css("visibility", "visible")
+                var searchQuery = challengeID + "JavaScript";
+                let googleKey = "AIzaSyCN8BP_zA7LbOr5ZegORQuuaaKh06r5Fkk";
+                $.ajax({
+                    url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + searchQuery + "&key=" + googleKey,
+                    method: "GET"
+                }).then(function (data) {
+                    console.log(data);
+                    console.log(data.items[1].id.videoId);
+                    for (var videoNum = 0; videoNum < 5; videoNum++) {
+                        var videoUrl = "https://www.youtube.com/embed/" + data.items[videoNum].id.videoId;
+                        console.log(videoUrl);
+                        $(".videos").append('<li><iframe width="200" height="150" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+
+            })
+
         })
     })
 
-    hard.on("click", function (){
+    hard.on("click", function () {
         challengeIndex = Math.floor(Math.random() * hardArr.length)
         challengeID = hardArr[challengeIndex];
         $.ajax({
             url: "https://www.codewars.com/api/v1/code-challenges/" + challengeID,
             headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
             method: "GET"
-        }).then(function (data) {
+        }).then(function (props) {
             $(".buttons").empty();
             $("#youtubeBtn").append(youtubeBtn)
             q.empty();
             q.append(qDiv);
             qDiv.append(favIcon);
             qDiv.append(qText);
-            qText.text(data.description)
-            console.log(data)
+            qText.text(props.description)
+            console.log(props);
+
+            // Youtube API search call - Mathew 
+            youtubeBtn.on("click", function () {
+                $(".hide").css("visibility", "visible")
+                var searchQuery = challengeID + "JavaScript";
+                let googleKey = "AIzaSyCN8BP_zA7LbOr5ZegORQuuaaKh06r5Fkk";
+                $.ajax({
+                    url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + searchQuery + "&key=" + googleKey,
+                    method: "GET"
+                }).then(function (data) {
+                    console.log(data);
+                    console.log(data.items[1].id.videoId);
+                    for (var videoNum = 0; videoNum < 5; videoNum++) {
+                        var videoUrl = "https://www.youtube.com/embed/" + data.items[videoNum].id.videoId;
+                        console.log(videoUrl);
+                        $(".videos").append('<li><iframe width="200" height="150" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                })
+
+            })
+
         })
     })
     //Saving individual's name from index.html
@@ -91,24 +160,8 @@ $(document).ready(function () {
 
 
     loadName.text(localStorage.getItem("Name"));
-    save.on("click", function (){
+    save.on("click", function () {
         localStorage.setItem("Name", user.val());
     })
-    //Youtube API search call - Mathew 
-    // var searchQuery="software";
-    // let googleKey = "AIzaSyCN8BP_zA7LbOr5ZegORQuuaaKh06r5Fkk";
-    // $.ajax({
-    //     url: "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+searchQuery+"&key=" + googleKey,
-    //     method: "GET"
-    // }).then(function (data) {
-    //     console.log(data);
-    //     console.log(data.items[1].id.videoId);
-    //     for ( var videoNum=0; videoNum<5; videoNum++){
-    //         var videoUrl="https://www.youtube.com/embed/"+ data.items[videoNum].id.videoId;
-    //         console.log(videoUrl);
-    //         $(".videos").append('<li><iframe width="200" height="150" src='+videoUrl+' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
-    //     }
-    // }).catch(function (error){
-    //     console.log(error)
-    // })
+
 });
