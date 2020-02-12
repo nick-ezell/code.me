@@ -7,12 +7,13 @@
     cursor: pointer;
 }
 .youtube {
-    height:150px;
-    width:210px;
+    height:250px;
+    width:300px;
     border:1px solid #ccc;
     font:16px/26px Georgia, Garamond, Serif;
     overflow:auto;
 }
+
 
 .hide {
     visibility: hidden
