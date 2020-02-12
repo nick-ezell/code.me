@@ -82,6 +82,7 @@ $(document).ready(function () {
         }).then(function (props) {
             $(".buttons").empty();
             $("#youtubeBtn").append(youtubeBtn)
+            youtubeBtn.prepend(youtubeIcon)
             q.empty();
             q.append(qDiv);
             qDiv.append(favIcon);
@@ -124,6 +125,7 @@ $(document).ready(function () {
         }).then(function (props) {
             $(".buttons").empty();
             $("#youtubeBtn").append(youtubeBtn)
+            youtubeBtn.prepend(youtubeIcon)
             q.empty();
             q.append(qDiv);
             qDiv.append(favIcon);
