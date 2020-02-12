@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>code.me - Challenge</title>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+
 </head>
 
 <body>
@@ -35,30 +39,53 @@
             </nav>
         </div>
 
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-6 is-offset-3">
-                </div>
-
-                <div class="columns is-gapless is-multiline is-mobile">
-                    <div class="column">
-                        <h3 class="title">
-                            View Solutions</h3>
+        
+                     
+                    <div class="container column is-12">
+                        <div class="hero-body">
+                            
+                                <div class="column is-6 is-offset-3">
+                                    <h3 class="subtitle" id=question>
+                        Welcome to code.me, <span id="name"></span>! Please select a level of difficulty for the daily challenge </h3>
+       
+            <div class="container">
+                <div class="column is-8 is-offset-2">
+                    <div class="buttons">
+                        <button class="button is-rounded is-primary is-medium" id="easy">
+                            Easy
+                        </button>
+                        <button class="button is-rounded is-warning is-medium" id=medium>
+                            Medium
+                        </button>
+                        <button class="button is-rounded is-danger is-medium" id="hard">
+                            Hard
+                        </button>
+                                                </button>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                    <div class="container">
+                                    <h3 class="subtitle" id=questionText>Top 5 Related Videos: </h3>
+                                    <div
+                                    style="height:300px;width:220px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                                    <ul class="videos">
+                                        <!-- <li><iframe width="200" height="150" src="https://www.youtube.com/embed/at_Pv_b33wg"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
+            </div>   
+        </div>   
 
-                </div>
-                <div class="column is-one-quarter">
-                    <div style="height:300px;width:220px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-                        <ul>
-                          <li><iframe width="200" height="150" src="https://www.youtube.com/embed/at_Pv_b33wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></li>
-                          <li><iframe width="200" height="150" src="https://www.youtube.com/embed/at_Pv_b33wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></li>
-                          <li><iframe width="200" height="150" src="https://www.youtube.com/embed/at_Pv_b33wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></li>
-                          <li><iframe width="200" height="150" src="https://www.youtube.com/embed/at_Pv_b33wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></li>
-                          <li><iframe width="200" height="150" src="https://www.youtube.com/embed/at_Pv_b33wg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></li>
-                        </ul>
-                      </div>
-                    </div>
-            </div>
+
 
 
 
