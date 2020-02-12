@@ -19,9 +19,10 @@ $(document).ready(function () {
     //Elements for writing questions
     let q = $("#question");
     let qDiv = $("<div>");
+    qDiv.attr("class", "qDiv");
     let qText = $("<p>");
-    let favIcon = $("<img>").attr("src", "./assets/images/favicon.png");
-    favIcon.attr("class", "favImg");
+    let favIcon = $("<img>").attr("src", "images/favicon.png");
+    favIcon.attr("class", "favIcon");
     //Click listeners for each difficulty
     easy.on("click", function () {
         challengeIndex = Math.floor(Math.random() * easyArr.length)
@@ -33,6 +34,7 @@ $(document).ready(function () {
         }).then(function (data) {
             q.empty();
             q.append(qDiv);
+            qDiv.append(favIcon);
             qDiv.append(qText);
             qText.text(data.description)
             console.log(data)
@@ -49,6 +51,7 @@ $(document).ready(function () {
         }).then(function (data) {
             q.empty();
             q.append(qDiv);
+            qDiv.append(favIcon);
             qDiv.append(qText);
             qText.text(data.description)
             console.log(data)
@@ -65,6 +68,7 @@ $(document).ready(function () {
         }).then(function (data) {
             q.empty();
             q.append(qDiv);
+            qDiv.append(favIcon);
             qDiv.append(qText);
             qText.text(data.description)
             console.log(data)

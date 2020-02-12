@@ -1,0 +1,11 @@
+.favIcon {
+    height: 35px;
+    width: 35px;
+}
+.youtube {
+    height:300px;
+    width:220px;
+    border:1px solid #ccc;
+    font:16px/26px Georgia, Garamond, Serif;
+    overflow:auto;
+}
