@@ -23,77 +23,84 @@
                             <h1 class="title is-1">code.me </h1>
                         </a>
                         <div id="navbarBurger" class="navbar-burger burger" data-target="navMenuDocumentation">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                               
-                              </div>
-                            </div>
-                    </div>
-                    <div id="navMenuDocumentation" class="navbar-menu">
-                        <div class="navbar-end">
-                            <span class="navbar-item">
-                                <a class="button is-rounded is-light is-outlined" href="starred.html">
-                                    <span class="icon">
-                                        <i class="fa fa-star"></i>
-                                    </span>
-                                    <span>Starred Challenges</span>
-                                </a>
-                            </span>
-                        </div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
 
+                        </div>
                     </div>
-                    
+                </div>
+                <div id="navMenuDocumentation" class="navbar-menu">
+                    <div class="navbar-end">
+                        <span class="navbar-item">
+                            <a class="button is-rounded is-light is-outlined" href="starred.html">
+                                <span class="icon">
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>Starred Challenges</span>
+                            </a>
+                        </span>
+                    </div>
+
                 </div>
             </nav>
         </div>
-        
-     
-   
-        
-        <div class="hero-body">
-            <div class="container column is-12">
-                <div class="column is-6 is-offset-3">
+
+
+
+
+        <div class="hero-body"></div>
+        <div class="container is-fluid has-text-centered">
+
+            <div class="columns is-mobile is-centered">
+                <div class="column is-mobile is-half">
                     <h3 class="subtitle" id=question>
                         Welcome to code.me, <span id="name"></span>! Please select a level of difficulty for the daily
-                        challenge </h3>
+                        challenge.</h3>
 
-                    <div class="container" id="youtubeBtn">
-                            <div class="columns is-mobile is-centered">
-                                
-                        <div class="column is-9 is-offset-1">
-                            <div class="buttons">
-                                <button class="button is-rounded is-primary is-medium" id="easy">
-                                    Easy
-                                </button>
-                                <button class="button is-rounded is-warning is-medium" id=medium>
-                                    Medium
-                                </button>
-                                <button class="button is-rounded is-danger is-medium" id="hard">
-                                    Hard
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="container hide">
                     <div class="columns is-mobile is-centered">
-                        <div class="column is-half">
-                            <h3 class="subtitle has-text-centered" id=questionText>Top 5 Related Videos:</h3>
-                            <div class="youtube hide">
-                                <ul class="videos">
-                                    
-                                </div>
-        
-                                </div>
-                            </div>
+
+                        <div class="buttons">
+                            <button class="button is-rounded is-primary is-medium" id="easy">
+                                Easy
+                            </button>
+                            <button class="button is-rounded is-warning is-medium" id=medium>
+                                Medium
+                            </button>
+
+                            <button class="button is-rounded is-danger is-medium" id="hard">
+                                Hard
+                            </button>
                         </div>
                     </div>
+
+
+                    <div class="columns is-mobile is-centered">
+                    <div class="youtubeBtn" id="youtubeBtn">
+                       
+                    </div>
                 </div>
+                    <div class="columns is-mobile is-centered">
+                    <h1 class=" hide title has-text-centered has-text-weight-semibold" id=videoText>Top 5 Related Videos:
+
+                    </h1>
+                    <!-- https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6 credit for scrolling wrapper -->
+                </div>
+                <div class="columns is-mobile is-centered">
+
+
+                <div class="scrolling-wrapper youtube videos">
+
+                    </div>
+                </div>
+                </div>
+
             </div>
+
+
+
         </div>
+
 
 
 
@@ -106,7 +113,7 @@
         <footer class="footer">Copyright &#169; 2019</footer>
     </div>
 
-  
+
     <!-- LOAD in jQUERY here! -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Fontawesome! -->
