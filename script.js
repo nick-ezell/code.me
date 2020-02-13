@@ -65,7 +65,7 @@ $(document).ready(function () {
                     for (var videoNum = 0; videoNum < 5; videoNum++) {
                         var videoUrl = "https://www.youtube.com/embed/" + data.items[videoNum].id.videoId;
                         console.log(videoUrl);
-                        $(".videos").append('<li><iframe width="283.5" height="230" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+                        $(".videos").append('<iframe class="card video" width="283.5" height="230" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
                     }
                 }).catch(function (error) {
                     console.log(error)
@@ -108,7 +108,7 @@ $(document).ready(function () {
                     for (var videoNum = 0; videoNum < 5; videoNum++) {
                         var videoUrl = "https://www.youtube.com/embed/" + data.items[videoNum].id.videoId;
                         console.log(videoUrl);
-                        $(".videos").append('<li><iframe width="200" height="150" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+                        $(".videos").append('<iframe class="card video" width="283.5" height="230" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
                     }
                 }).catch(function (error) {
                     console.log(error)
@@ -151,7 +151,7 @@ $(document).ready(function () {
                     for (var videoNum = 0; videoNum < 5; videoNum++) {
                         var videoUrl = "https://www.youtube.com/embed/" + data.items[videoNum].id.videoId;
                         console.log(videoUrl);
-                        $(".videos").append('<li><iframe width="200" height="150" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>')
+                        $(".videos").append('<iframe class="card video" width="283.5" height="230" src=' + videoUrl + ' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
                     }
                 }).catch(function (error) {
                     console.log(error)
