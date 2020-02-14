@@ -31,6 +31,11 @@ $(document).ready(function () {
     let youtubeIcon = $("<i>").attr("class", "fab fa-youtube")
     youtubeBtn.attr("id", "ytBtn")
     youtubeBtn.text("YouTube References")
+    let savedQuestions = JSON.parse(localStorage.getItem("Favorites"));
+    let favArray = [];
+    if(savedQuestions){
+        favArray = [...savedQuestions];
+    }
     //Click listeners for each difficulty
     easy.on("click", function () {
         challengeIndex = Math.floor(Math.random() * easyArr.length)
@@ -70,6 +75,37 @@ $(document).ready(function () {
                 }).catch(function (error) {
                     console.log(error)
                 })
+
+            })
+
+            favSpan.on("click", function () {
+                favArray.push(challengeID);
+                localStorage.setItem("Favorites", JSON.stringify(favArray))
+                let favContainer = $("#favContainer");
+                let favBox = $("<div>").attr("class", "box");
+                let favArticle = $("<article>").attr("class", "media");
+                let favDivLeft = $("<div>").attr("class", "media-left");
+                let favNav = $("<nav>").attr("class", "level is-mobile");
+                let favLevelLeft = $("<div>").attr("class", "level-left");
+                let favIconAnchor = $("<a>").attr("class", "level-item");
+                favIconAnchor.attr("aria-label", "reply");
+                let favIconSpan = $("<span>").attr("class", "icon is-small");
+                let favIconTwo = $("<i>").attr("class", "fas fa-star");
+                favIconTwo.attr("class", "favIconTwo");
+                favIconTwo.attr("aria-hidden", "true");
+                let favMediaContent = $("<div>").attr("class", "media-content");
+                let favContent = $("<div>").attr("class", "content");
+                let favQuestionP = $("<p>");
+                let favQuestionName = $("<strong>");
+                let favQuestionDate = $("<small>");
+                let favBR = $("<br>");
+                console.log(favArray);  
+                favContainer.append(favBox);
+                favBox.append(favArticle)
+                favArticle.append(favDivLeft);
+                favDivLeft.append(favNav);
+                favNav.append(favLevelLeft);
+                favLevelLeft.append(favIconSpan);
 
             })
 
@@ -165,15 +201,15 @@ $(document).ready(function () {
     //toggle f(x) for navbar 
     function toggle() {
         var burger = document.querySelector('.burger');
-        var nav = document.querySelector('#'+burger.dataset.target);
-       
-        burger.addEventListener('click', function(){
-          burger.classList.toggle('is-active');
-          nav.classList.toggle('is-active');
+        var nav = document.querySelector('#' + burger.dataset.target);
+
+        burger.addEventListener('click', function () {
+            burger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
         });
 
-      } 
-      toggle();
+    }
+    toggle();
 
     //Saving individual's name from index.html
     let save = $("#saveName");
@@ -183,11 +219,28 @@ $(document).ready(function () {
 
     loadName.text(localStorage.getItem("Name"));
     save.on("click", function () {
-        if(user.val() === ""){
+        if (user.val() === "") {
             localStorage.setItem("Name", "friend")
         } else {
-        localStorage.setItem("Name", user.val());
-    }
+            localStorage.setItem("Name", user.val());
+        }
     })
+    //Creating variables to dynamically generate areas for starred questions.
+    let favContainer = $("#favContainer");
+    let favBox = $("<div>").attr("class", "box");
+    let favArticle = $("<article>").attr("class", "media");
+    let favDivLeft = $("<div>").attr("class", "media-left");
+    let favNav = $("<nav>").attr("class", "level is-mobile");
+    let favLevelLeft = $("<div>").attr("class", "level-left");
+    let favIconAnchor = $("<a>").attr("class", "level-item");
+    favIconAnchor.attr("aria-label", "reply");
+    let favIconSpan = $("<span>").attr("class", "icon is-small");
+    let favMediaContent = $("<div>").attr("class", "media-content");
+    let favContent = $("<div>").attr("class", "content");
+    let favQuestionP = $("<p>");
+    let favQuestionName = $("<strong>");
+    let favQuestionDate = $("<small>");
+    let favBR = $("<br>");
+    
 
 });
