@@ -215,11 +215,17 @@ $(document).ready(function () {
 
 
     console.log(favArray);
+    if(favArray.length > 0){
     let clear = $("<button>").attr("class", "button is-rounded is-medium is-danger");
     clear.text("Empty Favorites");
     clear.attr("id", "clear");
     $("#favContainer").append(clear);
     $("#favContainer").append($("<hr>"));
+    clear.on("click", function () {
+        localStorage.clear("Favorites");
+        location.reload();
+    })
+    };
 
     function appendFavs() {
         let favContainer = $("#favContainer");
@@ -265,18 +271,10 @@ $(document).ready(function () {
 
 
         })
-        clear.on("click", function () {
-            localStorage.clear("Favorites");
-            location.reload();
-        })
     }
 
     for (i = 0; i < favArray.length; i++) {
         appendFavs();
     }
-
-    $("#favIconTwo").on("click", function () {
-
-    })
 
 });
