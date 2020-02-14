@@ -82,4 +82,26 @@
 .footer {
   padding: 1rem 1rem 1rem;
 }
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 700px) {
+  .button {
+    margin: 0px 80px 0px 80px;
+    padding: .5px;
+  }
+  .card {
+    width: 200px;
+    height: 175px;
+    margin-right: 5px;
+  }
+  .scrolling-wrapper, .scrolling-wrapper-flexbox {
+    height: 390px;
+    margin-bottom: 20px;
+    width: 300px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .columns {
+    margin: -1rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
