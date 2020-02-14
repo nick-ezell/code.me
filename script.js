@@ -185,9 +185,9 @@ $(document).ready(function () {
     save.on("click", function () {
         if(user.val() === ""){
             localStorage.setItem("Name", "friend")
-        } else {
+        }else{
         localStorage.setItem("Name", user.val());
-    }
+        }
     })
 
 });
