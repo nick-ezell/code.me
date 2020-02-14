@@ -10,7 +10,7 @@ $(document).ready(function () {
         "vowel-count", "disemvowel-trolls"];
     let mediumArr = ["get-the-middle-character", "century-from-year", "convert-a-number-to-a-string", "reversed-strings", "grasshopper-order-of-operations", "exes-and-ohs",
         "shortest-word", "descending-order", "sum-of-odd-numbers", ""];
-    let hardArr = ["create-phone-number", "who-likes-it", "find-the-odd-int", "counting-duplicates", "replace-with-alphabet-position", "convert-string-to-camel-case"];
+    let hardArr = ["create-phone-number", "who-likes-it", "are-the-values-equal", "counting-duplicates", "replace-with-alphabet-position", "convert-string-to-camel-case"];
 
     //IDs for difficulty buttons
     let easy = $("#easy")
@@ -99,14 +99,22 @@ $(document).ready(function () {
                 let favQuestionName = $("<strong>");
                 let favQuestionDate = $("<small>");
                 let favBR = $("<br>");
-                console.log(favArray);  
+                console.log(favArray);
+                for(i = 0; i < favArray.length; i++){
                 favContainer.append(favBox);
                 favBox.append(favArticle)
                 favArticle.append(favDivLeft);
                 favDivLeft.append(favNav);
                 favNav.append(favLevelLeft);
                 favLevelLeft.append(favIconSpan);
-
+                favIconSpan.append(favIconTwo);
+                favBox.append(favMediaContent);
+                favMediaContent.append(favContent);
+                favContent.append(favQuestionP);
+                favQuestionP.append(favQuestionName);
+                favQuestionP.append(favQuestionDate)
+                
+            }
             })
 
         })
