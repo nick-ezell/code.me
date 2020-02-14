@@ -33,7 +33,7 @@ $(document).ready(function () {
     youtubeBtn.text("YouTube References")
     let savedQuestions = JSON.parse(localStorage.getItem("Favorites"));
     let favArray = [];
-    if(savedQuestions){
+    if (savedQuestions) {
         favArray = [...savedQuestions];
     }
     //Click listeners for each difficulty
@@ -81,40 +81,6 @@ $(document).ready(function () {
             favSpan.on("click", function () {
                 favArray.push(challengeID);
                 localStorage.setItem("Favorites", JSON.stringify(favArray))
-                let favContainer = $("#favContainer");
-                let favBox = $("<div>").attr("class", "box");
-                let favArticle = $("<article>").attr("class", "media");
-                let favDivLeft = $("<div>").attr("class", "media-left");
-                let favNav = $("<nav>").attr("class", "level is-mobile");
-                let favLevelLeft = $("<div>").attr("class", "level-left");
-                let favIconAnchor = $("<a>").attr("class", "level-item");
-                favIconAnchor.attr("aria-label", "reply");
-                let favIconSpan = $("<span>").attr("class", "icon is-small");
-                let favIconTwo = $("<i>").attr("class", "fas fa-star");
-                favIconTwo.attr("class", "favIconTwo");
-                favIconTwo.attr("aria-hidden", "true");
-                let favMediaContent = $("<div>").attr("class", "media-content");
-                let favContent = $("<div>").attr("class", "content");
-                let favQuestionP = $("<p>");
-                let favQuestionName = $("<strong>");
-                let favQuestionDate = $("<small>");
-                let favBR = $("<br>");
-                console.log(favArray);
-                for(i = 0; i < favArray.length; i++){
-                favContainer.append(favBox);
-                favBox.append(favArticle)
-                favArticle.append(favDivLeft);
-                favDivLeft.append(favNav);
-                favNav.append(favLevelLeft);
-                favLevelLeft.append(favIconSpan);
-                favIconSpan.append(favIconTwo);
-                favBox.append(favMediaContent);
-                favMediaContent.append(favContent);
-                favContent.append(favQuestionP);
-                favQuestionP.append(favQuestionName);
-                favQuestionP.append(favQuestionDate)
-                
-            }
             })
 
         })
@@ -160,6 +126,12 @@ $(document).ready(function () {
 
             })
 
+            favSpan.on("click", function () {
+                favArray.push(challengeID);
+                localStorage.setItem("Favorites", JSON.stringify(favArray))
+                console.log(favArray);
+            })
+
         })
     })
 
@@ -203,6 +175,11 @@ $(document).ready(function () {
 
             })
 
+            favSpan.on("click", function () {
+                favArray.push(challengeID);
+                localStorage.setItem("Favorites", JSON.stringify(favArray))
+            })
+
         })
     })
 
@@ -233,22 +210,71 @@ $(document).ready(function () {
             localStorage.setItem("Name", user.val());
         }
     })
-    //Creating variables to dynamically generate areas for starred questions.
-    let favContainer = $("#favContainer");
-    let favBox = $("<div>").attr("class", "box");
-    let favArticle = $("<article>").attr("class", "media");
-    let favDivLeft = $("<div>").attr("class", "media-left");
-    let favNav = $("<nav>").attr("class", "level is-mobile");
-    let favLevelLeft = $("<div>").attr("class", "level-left");
-    let favIconAnchor = $("<a>").attr("class", "level-item");
-    favIconAnchor.attr("aria-label", "reply");
-    let favIconSpan = $("<span>").attr("class", "icon is-small");
-    let favMediaContent = $("<div>").attr("class", "media-content");
-    let favContent = $("<div>").attr("class", "content");
-    let favQuestionP = $("<p>");
-    let favQuestionName = $("<strong>");
-    let favQuestionDate = $("<small>");
-    let favBR = $("<br>");
-    
+
+
+    console.log(favArray);
+    let clear = $("<button>").attr("class", "button is-rounded is-medium is-danger");
+    clear.text("Empty Favorites");
+    clear.attr("id", "clear");
+    $("#favContainer").append(clear);
+    $("#favContainer").append($("<hr>"));
+
+    function appendFavs() {
+        let favContainer = $("#favContainer");
+        let favBox = $("<div>").attr("class", "box");
+        let favArticle = $("<article>").attr("class", "media");
+        let favDivLeft = $("<div>").attr("class", "media-left");
+        let favNav = $("<nav>").attr("class", "level is-mobile");
+        let favLevelLeft = $("<div>").attr("class", "level-left");
+        let favIconAnchor = $("<a>").attr("class", "level-item");
+        favIconAnchor.attr("aria-label", "reply");
+        let favIconSpan = $("<span>").attr("class", "icon is-small");
+        let favIconTwo = $("<i>").attr("class", "fas fa-star");
+        favIconTwo.attr("id", "favIconTwo");
+        favIconTwo.attr("aria-hidden", "true");
+        let favMediaContent = $("<div>").attr("class", "media-content");
+        let favContent = $("<div>").attr("class", "content");
+        let favQuestionP = $("<p>");
+        let favQuestionName = $("<strong>");
+        let favQuestionDate = $("<small>");
+        let favBR = $("<br>");
+        $.ajax({
+            url: "https://www.codewars.com/api/v1/code-challenges/" + favArray[i],
+            headers: { "Authorization": "MhherAbCWBLgq-YZvg_G" },
+            method: "GET"
+        }).then(function (props) {
+            favQuestionName.text(props.name);
+            favQuestionP.text(props.description);
+            console.log(props)
+            favContainer.append(favBox);
+            favBox.append(favArticle)
+            favArticle.append(favDivLeft);
+            favDivLeft.append(favNav);
+            favNav.append(favLevelLeft);
+            favLevelLeft.append(favIconAnchor);
+            favIconAnchor.append(favIconSpan);
+            favIconSpan.append(favIconTwo);
+            favBox.append(favMediaContent);
+            favMediaContent.append(favContent);
+            favContent.append(favQuestionName);
+            favContent.append(favQuestionP);
+            favQuestionP.append(favQuestionDate);
+            favQuestionP.append(favBR);
+
+
+        })
+        clear.on("click", function () {
+            localStorage.clear("Favorites");
+            location.reload();
+        })
+    }
+
+    for (i = 0; i < favArray.length; i++) {
+        appendFavs();
+    }
+
+    $("#favIconTwo").on("click", function () {
+
+    })
 
 });
