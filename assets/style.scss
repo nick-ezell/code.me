@@ -1,0 +1,80 @@
+#favIcon {
+    margin-bottom: .5em;
+    color: #3173dc;
+}
+#favIcon:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+
+.navbar-burger {
+ color: aliceblue!important;
+}
+
+#question {
+  margin-bottom: 50px;
+}
+
+#videoText {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    
+    
+    .card {
+      display: inline-block;
+    }
+  }
+  
+  .scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    
+    .card {
+      flex: 0 0 auto;
+      margin-right: 3px;
+    }
+  }
+  
+  /* .youtube {
+    height:250px;
+    width:300px;
+    border:3px solid  aliceblue;
+    font:16px/26px Georgia, Garamond, Serif;
+    overflow:auto;
+} */
+
+  .card {
+    width: 380px;
+    height: 275px;
+    margin-right: 3px;
+  }
+  
+  .scrolling-wrapper, .scrolling-wrapper-flexbox {
+    height: 300px;
+    margin-bottom: 20px;
+    width: 800px;
+    -webkit-overflow-scrolling: touch;
+ 
+  }
+
+#ytBtn{
+  justify-items: center;
+
+}
+.hide {
+  visibility: hidden
+}
+.fa-youtube {
+  margin: 3px
+}
+.footer {
+  padding: 1rem 1rem 1rem;
+}
