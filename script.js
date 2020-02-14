@@ -99,7 +99,8 @@ $(document).ready(function () {
             youtubeBtn.prepend(youtubeIcon)
             q.empty();
             q.append(qDiv);
-            qDiv.append(favIcon);
+            qDiv.append(favSpan);
+            favSpan.append(favIcon);
             qDiv.append(qText);
             qText.text(props.description)
             console.log(props)
@@ -125,7 +126,7 @@ $(document).ready(function () {
                 })
 
             })
-
+    
             favSpan.on("click", function () {
                 favArray.push(challengeID);
                 localStorage.setItem("Favorites", JSON.stringify(favArray))
@@ -148,7 +149,8 @@ $(document).ready(function () {
             youtubeBtn.prepend(youtubeIcon)
             q.empty();
             q.append(qDiv);
-            qDiv.append(favIcon);
+            qDiv.append(favSpan);
+            favSpan.append(favIcon);
             qDiv.append(qText);
             qText.text(props.description)
             console.log(props);
