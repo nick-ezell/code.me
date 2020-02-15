@@ -104,6 +104,9 @@
     width: 300px;
     -webkit-overflow-scrolling: touch;
   }
+  #saveName {
+    margin-top: .5em;
+  }
   .field.is-grouped {
     display: -webkit-box;
     display: -ms-flexbox;
