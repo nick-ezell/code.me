@@ -1,4 +1,4 @@
-#  Project 1: Code.me
+#  Analysis: Code.me
 
 ## Overview
 Welcome to code.me! This is a simplistic code challenge application created to assist developers with improve coding skills with daily random generated challenges of a chosen difficulty (Easy, Medium, Hard).
